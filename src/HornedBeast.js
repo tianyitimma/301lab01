@@ -42,7 +42,7 @@ class HornedBeast extends React.Component{
     //     Current likes: {this.state.likes}
     //   </span>
     // </div>
-      
+
     );
   }
 }
