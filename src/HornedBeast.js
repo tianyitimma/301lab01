@@ -12,23 +12,21 @@ class HornedBeast extends React.Component{
 
   click = () => {
     this.setState({likes: this.state.likes + 1});
-    //this.props.modalBeast();
+    this.props.turnOnModal(this.props.title);
   }
 
   render () {
     return (
-      <Card style={{ width: '28rem' }} id={this.props.title}>
-        <Card.Img variant="top" src={this.props.image_url} onClick={this.click} 
-          onClick={this.props.modalBeast} 
-        />
+      <Card style={{ width: '28rem' }} key={this.props.title} onClick={this.click} >
+        <Card.Img variant="top" src={this.props.image_url} />
         <Card.Body>
           <Card.Title>{this.props.title}</Card.Title>
           <Card.Text>
             {this.props.description}
-            <br />
-            Current likes: {this.state.likes}
           </Card.Text>
-          
+          <Card.Text>
+            ❤️ =  {this.state.likes}
+          </Card.Text>
         </Card.Body>
       </Card>
 
