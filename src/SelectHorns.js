@@ -13,25 +13,30 @@ class SelectHorns extends React.Component{
 
   render() {
     return (
-      
+
       <Form>
         <Form.Label
           className="me-sm-2"
           htmlFor="inlineFormCustomSelect"
         >
-          This is my Form: Select the number of horns
+          Select the number of horns
         </Form.Label>
-        {/* <Form.Select className="me-sm-2" id="inlineFormCustomSelect" onChange={this.select}>
-          <option value="0">Choose...</option>
+        <Form.Control
+          className="me-sm-2"
+          htmlFor="inlineFormCustomSelect"
+          as="select"
+          onChange={this.select}>
+          <option value="0">Choose the number of horns</option>
           <option value="1">One</option>
           <option value="2">Two</option>
           <option value="3">Three</option>
-        </Form.Select> */}
-        <Form.Control id="inlineFormInputName" placeholder="enter 1-3, or 100" onChange={this.select} />
-        
+          <option value="100">MANY</option>
+        </Form.Control>
+        {/* <Form.Control id="inlineFormInputName" placeholder="enter 1-3, or 100" onChange={this.select} /> */}
+
 
       </Form>
-      
+
     );
   }
 }

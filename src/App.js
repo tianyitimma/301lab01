@@ -15,7 +15,7 @@ class App extends React.Component{
       beast: beastData,
       showModal: false,
       selected: {},
-      horns: 1,
+      horns: 0,
     };
   }
   // turn on the modal function
