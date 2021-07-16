@@ -4,6 +4,7 @@ import Main from './main';
 import Footer from './footer';
 import beastData from './data.json';
 import SelectedBeast from './SelectedBeast';
+import SelectHorns from './SelectHorns';
 
 // add a common
 class App extends React.Component{
@@ -14,6 +15,7 @@ class App extends React.Component{
       beast: beastData,
       showModal: false,
       selected: {},
+      horns: 1,
     };
   }
   // turn on the modal function
@@ -30,13 +32,24 @@ class App extends React.Component{
     this.setState({showModal: false});
   }
 
+  // update the number of horns from form
+  horns = (n) => {
+    this.setState({
+      horns: n,
+    });
+    console.log('selected horns ', this.state.horns);
+  }
+
+
   render () {
     return (
       <>
         <Header />
+        <SelectHorns selectHorns={this.horns} />
         <Main
           allBeast={this.state.beast}
           turnOnModal={this.turnOnModal}
+          horns={this.state.horns}
         />
         <SelectedBeast
           modalBeast={this.state.selected}
